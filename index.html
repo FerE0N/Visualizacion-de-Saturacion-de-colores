@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Saturation Visualizer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <aside class="sidebar">
+        <h2>Color Info</h2>
+
+        <div class="info-item">
+            <div class="info-label">Current Color</div>
+            <div class="info-value" id="colorName">Red</div>
+        </div>
+
+        <div class="info-item">
+            <div class="info-label">Saturation</div>
+            <div class="info-value" id="saturationValue">100%</div>
+        </div>
+
+        <div class="info-item">
+            <div class="info-label">HEX Value</div>
+            <div class="info-value" id="hexValue">#FF0000</div>
+        </div>
+
+        <div class="info-item">
+            <div class="info-label">HSL</div>
+            <div class="info-value" id="hslValue">hsl(0, 100%, 50%)</div>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <div class="saturation-display">
+            <div class="color-preview" id="colorPreview"></div>
+        </div>
+
+        <div class="slider-container">
+            <div class="slider-label">
+                <span>Desaturated (Gray)</span>
+                <span>Fully Saturated</span>
+            </div>
+            <input type="range" id="saturationSlider" min="0" max="100" value="100">
+        </div>
+
+        <div class="bottom-bar" id="colorSelector">
+            <!-- Primary Colors -->
+            <button type="button" class="color-btn active" data-color="#ff0000" data-hue="0" data-color-name="Red"
+                style="background-color: #ff0000;" aria-label="Select Red"></button>
+            <button type="button" class="color-btn" data-color="#00ff00" data-hue="120" data-color-name="Green"
+                style="background-color: #00ff00;" aria-label="Select Green"></button>
+            <button type="button" class="color-btn" data-color="#0000ff" data-hue="240" data-color-name="Blue"
+                style="background-color: #0000ff;" aria-label="Select Blue"></button>
+
+            <!-- Divider -->
+            <div style="width: 1px; height: 40px; background: rgba(255,255,255,0.1); margin: 0 10px;"></div>
+
+            <!-- Secondary Colors -->
+            <button type="button" class="color-btn" data-color="#ffff00" data-hue="60" data-color-name="Yellow"
+                style="background-color: #ffff00;" aria-label="Select Yellow"></button>
+            <button type="button" class="color-btn" data-color="#00ffff" data-hue="180" data-color-name="Cyan"
+                style="background-color: #00ffff;" aria-label="Select Cyan"></button>
+            <button type="button" class="color-btn" data-color="#ff00ff" data-hue="300" data-color-name="Magenta"
+                style="background-color: #ff00ff;" aria-label="Select Magenta"></button>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
